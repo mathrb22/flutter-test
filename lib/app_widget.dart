@@ -9,7 +9,10 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Test',
       theme: ThemeData(primaryColor: Colors.purple),
-      home: HomePage(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => HomePage(),
+      },
     );
   }
 }
