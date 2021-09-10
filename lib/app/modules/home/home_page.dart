@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Container(color: Colors.white),
-      appBar: AppBar(title: Text('FlutterTest')),
+      appBar: AppBar(title: Text('Flutter Test')),
     );
   }
 }

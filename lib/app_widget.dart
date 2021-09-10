@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'modules/home_page.dart';
+import 'app/modules/home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({ Key? key }) : super(key: key);
@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Test',
       theme: ThemeData(primaryColor: Colors.purple),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/home',
       routes: {
         '/home': (context) => HomePage(),
