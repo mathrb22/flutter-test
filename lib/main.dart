@@ -1,14 +1,22 @@
-import 'package:fluter_test/app_widget.dart';
+import 'package:fluter_test/app/bindings/home_binding.dart';
+import 'package:fluter_test/app/modules/home/home_page.dart';
+import 'package:fluter_test/app/routes/app_pages.dart';
+import 'package:fluter_test/app/themes/app_theme.dart';
+import 'package:fluter_test/app/translations/app_translations.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return AppWidget();
-  }
+  runApp(GetMaterialApp(
+    title: 'Flutter Test - GetX',
+    debugShowCheckedModeBanner: false,
+    initialRoute: Routes.INITIAL,
+    initialBinding: HomeBinding(),
+    defaultTransition: Transition.fade,
+    theme: appThemeData,
+    getPages: AppPages.pages,
+    home: HomePage(),
+    locale: Locale('pt', 'BR'),
+    translationsKeys: AppTranslation.translations,
+  ));
 }

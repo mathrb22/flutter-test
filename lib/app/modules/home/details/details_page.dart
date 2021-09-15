@@ -1,9 +1,9 @@
 import 'package:fluter_test/app/data/controller/home_controller/home_controller.dart';
+import 'package:fluter_test/app/widgets/margin_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 
-class HomePage extends GetView<HomeController> {
+class DetailsPage extends StatelessWidget {
 //repository and controller  injection bindings
 
   @override
@@ -13,22 +13,19 @@ class HomePage extends GetView<HomeController> {
       body: Container(
         child: GetX<HomeController>(initState: (state) {
           Get.find<HomeController>().getAll();
-        }, builder: (_) {
-          print(_);
-          return _.postList.length < 1
+        }, builder: (builder) {
+          return builder.postList.length < 1
               ? Center(
                   child: CircularProgressIndicator(),
                 )
               : ListView.builder(
                   itemBuilder: (context, index) {
                     return ListTile(
-                      leading: Icon(Icons.person),
-                      title: Text(_.postList[index].title),
-                      subtitle: Text(_.postList[index].body),
-                      trailing: Icon(Icons.more_vert),
+                      title: Text(builder.postList[index].title),
+                      subtitle: Text(builder.postList[index].body),
                     );
                   },
-                  itemCount: _.postList.length,
+                  itemCount: builder.postList.length,
                 );
         }),
       ),
