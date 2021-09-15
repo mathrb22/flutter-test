@@ -21,11 +21,15 @@ class HomePage extends GetView<HomeController> {
                 )
               : ListView.builder(
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      leading: Icon(Icons.person),
-                      title: Text(_.postList[index].title),
-                      subtitle: Text(_.postList[index].body),
-                      trailing: Icon(Icons.more_vert),
+                    return Card(
+                      child: ListTile(
+                        leading: Icon(Icons.person),
+                        title: Text(_.postList[index].title),
+                        subtitle: Text(_.postList[index].body),
+                        trailing: Icon(Icons.more_vert),
+                      ),
+                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      elevation: 5,
                     );
                   },
                   itemCount: _.postList.length,
